@@ -112,6 +112,57 @@ Where:
 
 This Hamiltonian causes the qubit to rotate about the X-axis on the Bloch sphere, effectively flipping its state over time.
 
+## Time Evolution of a Qubit
+
+Understanding how a qubit evolves in time is essential to modeling quantum systems. This evolution depends on whether the system is isolated (ideal, noiseless) or coupled to an external environment (realistic, noisy). Let’s explore both cases.
+
+### Unitary Evolution (Noiseless)
+
+In the idealized case of an isolated qubit, the system evolves in a deterministic and reversible manner. The state vector \( |\psi(t)\rangle \) evolves according to the time-dependent Schrödinger equation:
+
+$$
+\frac{d}{dt}|\psi(t)\rangle = -i H |\psi(t)\rangle
+$$
+
+Here, \( H \) is the Hamiltonian of the system, and we’ve set \( \hbar = 1 \) for simplicity. The formal solution to this differential equation involves a matrix exponential:
+
+$$
+|\psi(t)\rangle = e^{-i H t} |\psi(0)\rangle
+$$
+
+This equation describes how the initial state \( |\psi(0)\rangle \) evolves under the influence of the Hamiltonian \( H \). The evolution is unitary, preserving the norm of the state vector. Visually, this corresponds to a rotation of the qubit’s state on the surface of the Bloch sphere.
+
+### Open Quantum Systems and Noise
+
+Real qubits are never perfectly isolated. They interact with their environment, leading to decoherence and noise. To model this, we shift from pure states to a more general formalism: the density matrix.
+
+#### The Density Matrix Formalism
+
+For a pure state \( |\psi\rangle \), the density matrix is defined as:
+
+$$
+\rho = |\psi\rangle \langle \psi|
+$$
+
+This representation can also describe statistical mixtures of quantum states (mixed states), enabling us to study decoherence and dissipative processes.
+
+#### The Lindblad Master Equation
+
+The dynamics of an open quantum system are captured by the Lindblad master equation. It generalizes the Schrödinger equation by adding terms that model interaction with the environment:
+
+$$
+\frac{d\rho}{dt} = -i[H, \rho] + \sum_k \left( L_k \rho L_k^\dagger - \frac{1}{2} \{L_k^\dagger L_k, \rho\} \right)
+$$
+
+In this equation:
+
+- \( H \) is the system Hamiltonian (as before),
+- \( [H, \rho] \) is the commutator, describing coherent evolution,
+- \( L_k \) are the Lindblad operators modeling different decoherence channels (e.g., amplitude damping, dephasing),
+- \( \{A, B\} = AB + BA \) is the anticommutator.
+
+
+
 
 
 
@@ -145,7 +196,7 @@ Dépolarisation
 utilisation de qutip.Qobj, mesolve, lindblad_dissipator
 liens vers documentation QuTiP : https://qutip.org/docs/latest/
 
-aramètres physiques
+paramètres physiques
 Fréquences typiques des transmons : 4–7 GHz
 Valeurs réalistes de T₁, T₂ : 10–100 μs
 Gate time : 10–100 ns
