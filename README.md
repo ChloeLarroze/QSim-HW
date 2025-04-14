@@ -1,6 +1,6 @@
 # QSim-HW — Quantum Hardware-Inspired Circuit Simulator
 
-QSim-HW is an educational Python project aimed at simulating and visualizing noisy quantum hardware behaviors, with a special focus on superconducting qubits (e.g., transmons). Using realistic noise models (decoherence, thermal effects, gate infidelity), this simulator lets you explore the impact of physical limitations on quantum gates and states — all from your laptop, without access to a lab.
+QSim-HW is my first quantum computing project using Python, aimed at simulating and visualizing noisy quantum hardware behaviors, with a special focus on superconducting qubits (e.g., transmons). Using realistic noise models (decoherence, thermal effects, gate infidelity), this simulator lets you explore the impact of physical limitations on quantum gates and states — all from your laptop, without access to a lab.
 
 The goal is to make quantum hardware simulation accessible, intuitive, and pedagogical — especially for students and enthusiasts interested in the quantum hardware layer.
 
@@ -75,7 +75,17 @@ Explore the Jupyter notebooks inside the notebooks/ directory. Examples include:
 
 
 ## Resources & References
- <!-- to do  -->
+
+- MIT OpenCourseWare - Quantum Physics II  
+  Available at: [https://ocw.mit.edu](https://ocw.mit.edu)
+
+- Michel Devoret – Yale University Lecture Notes  
+  Available at: [https://courses.yale.edu](https://courses.yale.edu)
+
+- IBM Quantum – Quantum Hardware Overview  
+  Available at: [https://quantum-computing.ibm.com](https://quantum-computing.ibm.com)
+
+- Nielsen, M.A., & Chuang, I.L. (2010). *Quantum Computation and Quantum Information*. Cambridge University Press.
 
 
 ## 🧑‍💻 Author
