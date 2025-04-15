@@ -8,7 +8,7 @@ The goal is to make quantum hardware simulation accessible, intuitive, and pedag
 
 ## Project Overview
 
-<!-- > (To be filled in: Write a paragraph about why you wanted to make this, e.g. “Bridging quantum physics and embedded systems through hands-on simulation”...) -->
+<!-- > ( bridging quantum physics and embedded systems through hands-on simulation...) -->
 
 ---
 
