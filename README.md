@@ -86,9 +86,3 @@ Explore the Jupyter notebooks inside the notebooks/ directory. Examples include:
   Available at: [https://quantum-computing.ibm.com](https://quantum-computing.ibm.com)
 
 - Nielsen, M.A., & Chuang, I.L. (2010). *Quantum Computation and Quantum Information*. Cambridge University Press.
-
-
-## 🧑‍💻 Author
-Made with ❤️ by Chlo
-(Master’s student in Microelectronics & Embedded Systems — Mines Saint-Étienne)
-
