@@ -161,8 +161,71 @@ In this equation:
 - \( L_k \) are the Lindblad operators modeling different decoherence channels (e.g., amplitude damping, dephasing),
 - \( \{A, B\} = AB + BA \) is the anticommutator.
 
+## Noise Channels in Qubits
 
+In any real quantum system, noise and decoherence are unavoidable. To understand and simulate their effects, we model various types of noise using specific Lindblad operators. These noise processes act on the system’s density matrix and can be interpreted as probabilistic "jumps" affecting the state of the qubit over time.
 
+### Relaxation (Energy decay, T₁)
+
+Relaxation models the spontaneous loss of energy, such as an excited qubit decaying to its ground state. This process is captured by the lowering operator:
+
+$$
+L = \sqrt{\gamma} \, \sigma^{-}
+$$
+
+where \( \sigma^{-} = \begin{pmatrix} 0 & 1 \\ 0 & 0 \end{pmatrix} \), and \( \gamma \) is the decay rate related to the characteristic relaxation time \( T_1 = \frac{1}{\gamma} \).
+
+### Dephasing (Loss of coherence, T₂)
+
+Dephasing occurs when the relative phase between \( |0\rangle \) and \( |1\rangle \) components of a superposition state is randomized without population transfer. This is described by:
+
+$$
+L = \sqrt{\gamma} \, \sigma_z
+$$
+
+It corresponds to fluctuations in energy levels or coupling to low-frequency noise sources. The associated coherence time is denoted \( T_2 \), typically satisfying \( \frac{1}{T_2} = \frac{1}{2T_1} + \Gamma_\phi \), where \( \Gamma_\phi \) is the pure dephasing rate.
+
+### Depolarization
+
+Depolarizing noise represents the complete randomization of the qubit state. It can be modeled as a uniform mixture over Pauli operations applied randomly with some probability \( p \). This type of noise drives the system towards a maximally mixed state.
+
+---
+
+## Implementation with QuTiP
+
+We simulate noisy quantum evolution using the QuTiP Python library. It provides tools for handling quantum objects, defining Hamiltonians, collapse operators, and solving the master equation.
+
+Key tools:
+
+- qutip.Qobj — for creating quantum states, operators, and density matrices
+- qutip.mesolve — for solving Schrödinger or Lindblad master equations
+- qutip.lindblad_dissipator — to build custom dissipative channels
+
+📚 Full documentation available at: [QuTiP Docs](https://qutip.org/docs/latest/)
+
+---
+
+## Physical Parameters (Realistic Regime)
+
+To simulate physical systems, we need parameters grounded in reality. Here are typical values for superconducting qubits such as transmons:
+
+- Qubit transition frequencies: 4–7 GHz
+- Relaxation time \( T_1 \): 10–100 μs
+- Dephasing time \( T_2 \): 10–100 μs
+- Gate duration (single-qubit): 10–100 ns
+
+---
+
+## 8. Visualization
+
+To gain intuition about noisy dynamics, we visualize the evolution of the qubit state \( \rho(t) \) on the Bloch sphere.
+
+- The state can be tracked using QuTiP’s `qutip.Bloch` class.
+- The fidelity of the state \( \rho(t) \) with respect to a target pure state \( |\psi\rangle \) can be computed as:
+
+$$
+\mathcal{F} = \langle \psi | \rho(t) | \psi \rangle
+$$
 
 
 
